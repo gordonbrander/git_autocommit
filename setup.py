@@ -6,12 +6,12 @@ with open(readme_path) as f:
     readme = f.read()
 
 setup(
-    name='logbook',
+    name='git_autocommit',
     version='0.0.1',
     author='Gordon Brander',
     description='Auto-commit to git on save',
     long_description=readme,
-    license="GPL",
+    license="MIT",
     url="https://github.com/gordonbrander/git_autocommit",
     classifiers=[
         "Development Status :: 3 - Alpha",
@@ -24,7 +24,7 @@ setup(
     include_package_data=True,
     entry_points={
         'console_scripts': [
-            'logbook=logbook:main'
+            'git_autocommit=git_autocommit:main'
         ]
     }
 )
