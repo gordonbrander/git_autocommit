@@ -34,6 +34,9 @@ def read_status_line(line):
 def format_title(changes):
     #  @TODO filter out additions, deletions and modifications
     # Call out deletions and additions in particular
+    # deletions = [file for status, file in changes if status == 'D']
+    # additions = [file for status, file in changes if status == 'A']
+    # modifications = [file for status, file in changes if status == 'M']
     files = [file for status, file in changes]
     msg = ""
     if len(files) > 2:
@@ -46,10 +49,16 @@ def format_title(changes):
         msg = files[0]
     return "[Auto] {}".format(msg)
 
+def format_summary(changes):
+    return "\n".join("{}: {}".format(status, file) for status, file in changes)
+
 def format_message(changes):
     title = format_title(changes)
-    summary = "\n".join("{}: {}".format(status, file) for status, file in changes)
+    summary = format_summary(changes)
     return COMMIT_MESSAGE.format(title=title, summary=summary)
+
+def read_changes(status):
+    return [read_status_line(line) for line in status.strip().split('\n')]
 
 def tick(directory):
     subprocess.check_call(['git', 'add', '-A', '.'], cwd=directory)
@@ -57,10 +66,8 @@ def tick(directory):
         ['git', 'status', '--porcelain'], cwd=directory
     )
     if status:
-        status_str = status.strip()
-        changes = [read_status_line(line) for line in status_str.split('\n')]
+        changes = read_changes(status)
         commit_message = format_message(changes)
-        print(commit_message)
         subprocess.check_call(
             ['git', 'commit', '-m', commit_message], cwd=directory
         )
