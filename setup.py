@@ -9,7 +9,7 @@ setup(
     name='git_autocommit',
     version='0.0.1',
     author='Gordon Brander',
-    description='Auto-commit to git whenver changes occur',
+    description='Automatically commit to git whenever changes occur.',
     long_description=readme,
     license="MIT",
     url="https://github.com/gordonbrander/git_autocommit",
@@ -24,7 +24,7 @@ setup(
     include_package_data=True,
     entry_points={
         'console_scripts': [
-            'git_autocommit=git_autocommit:main'
+            'autocommit=git_autocommit:main'
         ]
     }
 )

@@ -11,7 +11,7 @@ COMMIT_MESSAGE = """{title}
 
 parser = argparse.ArgumentParser(
     description="""
-    Automatically commit whenever a file is saved.
+    Automatically commit to git whenever changes occur.
     """,
 )
 parser.add_argument(
