@@ -32,9 +32,9 @@ def read_status_line(line):
     return (status.strip(), file.strip())
 
 def format_title(changes):
-    marker = "Auto"
+    #  @TODO filter out additions, deletions and modifications
+    # Call out deletions and additions in particular
     files = [file for status, file in changes]
-    flags = "".join(status for status, file in changes)
     msg = ""
     if len(files) > 2:
         first = ", ".join(files[0:2])
@@ -44,9 +44,7 @@ def format_title(changes):
         msg = ", ".join(files)
     else:
         msg = files[0]
-    return "[{marker} {flags}] {msg}".format(
-        marker=marker, msg=msg, flags=flags
-    )
+    return "[Auto] {}".format(msg)
 
 def format_message(changes):
     title = format_title(changes)
