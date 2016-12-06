@@ -3,6 +3,16 @@ Autocommit
 
 Automatically commit to git whenever changes occur.
 
+Autocommit automatically snapshots changes every 10s (at least). It does its best to create useful commit messages, so your git log is easy to browse through.
+
+Autocommit is useful for any situation where you want to be lazy but still have
+full versioning.
+
+- Designers: no more `new-website.v5-B-final FINAL.psd`. You can have it all.
+- Writers: [Markdown](https://ia.net/writer) <3 git
+- Students: now your fancy [LaTeX](http://www.latex-project.org/) thesis docs have a full version history.
+
+
 Use
 ---
 
@@ -26,6 +36,7 @@ You can set how often you want autocommit to check for changes with the `-s` fla
 ```cli
 autocommit -s 5 path/to/dir
 ```
+
 
 Install
 -------
