@@ -6,14 +6,14 @@ Automatically commit to git whenever changes occur.
 Use
 ---
 
-```bash
+```cli
 autocommit [path/to/dir]
 ```
 
-For example, say I want to check for changes in `design/comp:
+For example, say I want to check for changes in `design/psd`:
 
-```bash
-$ autocommit /design/comp
+```cli
+$ autocommit /design/psd
 
 Watching for changes every 10s. (ctl+c to stop)
 [master ea42d34] [Auto] ios_app.psd
@@ -23,7 +23,7 @@ Watching for changes every 10s. (ctl+c to stop)
 
 You can set how often you want autocommit to check for changes with the `-s` flag:
 
-```bash
+```cli
 autocommit -s 5 path/to/dir
 ```
 
@@ -36,13 +36,13 @@ Requirements:
 
 Install from source via Pip:
 
-```bash
+```cli
 git clone http://github.com/gordonbrander/git_autocommit.git
 pip install -e git_autocommit
 ```
 
 Or, just use it directly:
 
-```bash
+```cli
 ./git_autocommit.py path/to/dir
 ```
