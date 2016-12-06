@@ -9,7 +9,7 @@ setup(
     name='git_autocommit',
     version='0.0.1',
     author='Gordon Brander',
-    description='Auto-commit to git on save',
+    description='Auto-commit to git whenver changes occur',
     long_description=readme,
     license="MIT",
     url="https://github.com/gordonbrander/git_autocommit",

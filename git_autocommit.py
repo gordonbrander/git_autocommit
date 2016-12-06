@@ -81,7 +81,7 @@ def main():
             "Directory \"{}\" is not a git repository".format(directory)
         )
 
-    print('Watching for changes every {}s'.format(timeout))
+    print('Watching for changes every {}s. (ctl+c to stop)'.format(timeout))
 
     try:
         while True:
